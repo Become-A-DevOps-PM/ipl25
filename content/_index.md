@@ -1,19 +1,18 @@
 +++
 title = "DevOps PM IPL25"
-description = "Welcome to the DevOps PM IPL25 documentation site"
+description = "Infrastructure, applications, and security for DevOps"
 +++
 
-# Welcome to DevOps PM IPL25
+# DevOps PM IPL25
 
-This is your documentation site built with Hugo and the DocDock theme.
+Learn to build and manage cloud infrastructure, deploy applications, and implement security practices.
 
-## Features
+## What's Here
 
-- **Documentation** - Organize your content into chapters and pages
-- **Presentations** - Create reveal.js slides directly in Markdown
-- **Search** - Built-in search functionality
-- **Responsive** - Works on all devices
+- **Infrastructure Fundamentals** - Compute, network, and storage concepts
+- **Application Development** - Web applications and deployment
+- **IT Security** - Security principles and practices
+- **Exercises** - Hands-on work with real infrastructure
+- **Tutorials** - Step-by-step guides for tools and setup
 
-## Getting Started
-
-Browse the menu on the left to explore the documentation, or check out the [slides](/slides/) section for presentations.
+Use the menu to navigate, or start with [Getting Started](/getting-started/).
