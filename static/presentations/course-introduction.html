@@ -51,9 +51,9 @@
             margin-bottom: var(--space-md);
         }
 
-        .reveal h1 { font-size: 2.5em; }
-        .reveal h2 { font-size: 1.8em; }
-        .reveal h3 { font-size: 1.4em; }
+        .reveal h1 { font-size: 5em; }
+        .reveal h2 { font-size: 28em; }
+        .reveal h3 { font-size: 2.8em; }
 
         .reveal p {
             color: var(--white);
@@ -99,9 +99,9 @@
         }
 
         .main-title {
-            font-size: 2.5em !important;
+            font-size: 5em !important;
             font-weight: var(--weight-heavy);
-            line-height: 0.95 !important;
+            line-height: 1.3 !important;
             letter-spacing: -0.02em;
             margin: 0 0 25px 0;
             text-transform: uppercase;
@@ -109,7 +109,7 @@
         }
 
         .subtitle {
-            font-size: 1.2em;
+            font-size: 2.4em;
             color: var(--tech-cyan);
             font-weight: 300;
             margin: 0 0 25px 0;
@@ -117,7 +117,7 @@
         }
 
         .course-info {
-            font-size: 0.85em;
+            font-size: 1.7em;
             color: var(--muted-text);
             font-weight: var(--weight-normal);
             margin: 0;
@@ -133,7 +133,7 @@
 
         .content-slide h2 {
             color: var(--swedish-yellow);
-            font-size: 1.8em;
+            font-size: 3.6em;
             margin-bottom: var(--space-lg);
             border-left: 4px solid var(--swedish-yellow);
             padding-left: var(--space-md);
@@ -149,7 +149,7 @@
             margin: var(--space-sm) 0;
             padding-left: var(--space-lg);
             position: relative;
-            font-size: 0.95em;
+            font-size: 1.9em;
             color: var(--white);
             line-height: 1.5;
         }
@@ -210,7 +210,7 @@
         }
 
         .timeline-label {
-            font-size: 0.75em;
+            font-size: 1.5em;
             color: var(--white);
             font-weight: 500;
         }
@@ -316,33 +316,83 @@
                 <div class="bottom-accent"></div>
             </section>
 
-            <!-- SLIDE 2: Course Structure -->
-            <section class="content-slide" data-background-color="#0A0E27">
-                <h2>Kursens Upplägg</h2>
+            <!-- SLIDE 2: Instructor Introduction -->
+            <section class="title-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
 
-                <p style="font-size: 1.1em; margin-bottom: 30px;">
-                    Vi ska <span class="highlight">steg-för-steg</span> bygga en <span class="highlight">IT-miljö</span> för en enkel webbapplikation och samtidigt följa en <span class="highlight">agil</span> utvecklingsmetodik
-                </p>
+                <h2 style="color: var(--swedish-yellow); font-size: 3.6em; margin-bottom: 30px; border-left: 4px solid var(--swedish-yellow); padding-left: 20px;">Vem är jag?</h2>
 
-                <div class="fragment info-box">
-                    <p>Vi kommer att ha <span class="highlight">sprintar</span> på 1 vecka, som avslutas varje fredag med en <span class="highlight">demo</span>.</p>
+                <div style="display: flex; justify-content: flex-end; align-items: center; flex: 1;">
+                    <div style="background: rgba(106, 133, 167, 0.8); border-radius: 15px; padding: 50px; width: 500px; text-align: center;">
+                        <div style="width: 180px; height: 180px; border-radius: 50%; margin: 0 auto 30px; overflow: hidden;">
+                            <img src="lars-appel.jpg" alt="Lars Appel" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="color: var(--white); font-size: 3.5em; margin-bottom: 25px; text-transform: none;">Lars Appel</h3>
+                        <p style="font-size: 1.6em; line-height: 1.7; color: var(--white);">
+                            Utvecklare, Teamledare,<br>
+                            <span class="highlight">Projektledare</span>, Teknikchef,<br>
+                            Testledare, Solution Architect,<br>
+                            Business Analyst, <span class="highlight">Projektledare</span>,<br>
+                            Cloud Evangelist, Projektledare,<br>
+                            <span class="highlight">Projektledare</span>, Lärare ...
+                        </p>
+                    </div>
                 </div>
 
-                <p class="fragment" style="margin-top: 20px; color: var(--muted-text);">
-                    (Demon redovisas gruppvis)
-                </p>
+                <div class="bottom-accent"></div>
             </section>
 
-            <!-- SLIDE 3: Practical Focus -->
+            <!-- SLIDE 3: Student Introduction -->
+            <section class="title-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h2 style="color: var(--swedish-yellow); font-size: 3.6em; margin-bottom: 30px; border-left: 4px solid var(--swedish-yellow); padding-left: 20px;">Vem är du?</h2>
+
+                <div style="display: flex; justify-content: flex-end; align-items: center; flex: 1;">
+                    <div style="background: rgba(106, 133, 167, 0.8); border-radius: 15px; padding: 50px; width: 500px; text-align: center;">
+                        <div style="font-size: 10em; color: var(--white); margin-bottom: 20px;">?</div>
+                        <p style="font-size: 2em; color: var(--white);">Presentera dig själv</p>
+                    </div>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 4: Course Structure -->
             <section class="content-slide" data-background-color="#0A0E27">
                 <h2>Kursens Upplägg</h2>
 
-                <ul>
-                    <li class="fragment">Kursen är mycket <span class="highlight">praktiskt orienterad</span></li>
-                    <li class="fragment">Fokus är på att faktiskt kunna sätta upp en <span class="highlight">fungerande</span> IT-miljö</li>
-                    <li class="fragment">Alla praktiska <span class="highlight">övningar</span> genomförs på molnplattformen <span class="highlight">Azure</span></li>
-                    <li class="fragment">Ni kommer att få ett <span class="highlight">projektledaruppdrag</span>, som ska lösas under kursens gång</li>
-                </ul>
+                <div class="fragment info-box" style="margin-bottom: 20px;">
+                    <p style="font-size: 1.9em; margin: 0;">
+                        Vi ska <span class="highlight">steg-för-steg</span> bygga en <span class="highlight">IT-miljö</span> för en enkel webbapplikation och samtidigt följa en <span class="highlight">agil</span> utvecklingsmetodik
+                    </p>
+                </div>
+
+                <div class="fragment info-box" style="margin-bottom: 20px;">
+                    <p style="font-size: 1.9em; margin: 0;">
+                        Vi kommer att ha <span class="highlight">sprintar</span> på 1 vecka, som avslutas varje fredag med en <span class="highlight">demo</span>. (Demon redovisas gruppvis)
+                    </p>
+                </div>
+
+                <div class="fragment info-box" style="margin-bottom: 20px;">
+                    <p style="font-size: 1.9em; margin: 0;">
+                        Kursen är mycket <span class="highlight">praktiskt orienterad</span>. Fokus är på att faktiskt kunna sätta upp en <span class="highlight">fungerande</span> IT-miljö.
+                    </p>
+                </div>
+
+                <div class="fragment info-box" style="margin-bottom: 20px;">
+                    <p style="font-size: 1.9em; margin: 0;">
+                        Alla praktiska <span class="highlight">övningar</span> genomförs på molnplattformen <span class="highlight">Azure</span>.
+                    </p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p style="font-size: 1.9em; margin: 0;">
+                        Ni kommer att få ett <span class="highlight">projektledaruppdrag</span>, som ska lösas under kursens gång.
+                    </p>
+                </div>
             </section>
 
             <!-- SLIDE 4: Weekly Timeline -->
@@ -377,12 +427,17 @@
                 </div>
             </section>
 
-            <!-- SLIDE 5: Questions -->
-            <section class="section-divider" data-background-color="#004B79">
-                <div>
-                    <h2 style="font-size: 4em; margin-bottom: 20px;">?</h2>
-                    <p style="color: var(--white); font-size: 1.5em;">Frågor</p>
+            <!-- SLIDE 6: Questions -->
+            <section class="title-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center; padding-right: 40%;">
+                    <div style="font-size: 20em; color: var(--white); margin-bottom: 30px;">?</div>
+                    <p style="color: var(--swedish-yellow); font-size: 5em; font-weight: 800; text-transform: uppercase;">Frågor</p>
                 </div>
+
+                <div class="bottom-accent"></div>
             </section>
 
         </div>
