@@ -49,7 +49,7 @@ In this exercise, you will create a Bash script that automates the provisioning 
 	   --resource-group $resource_group \
 	   --location $location \
 	   --name $vm_name \
-	   --image Ubuntu2204 \
+	   --image Ubuntu2404 \
 	   --size Standard_B1s \
 	   --admin-username azureuser \
 	   --generate-ssh-keys \

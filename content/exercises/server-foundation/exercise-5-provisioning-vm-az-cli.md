@@ -70,7 +70,7 @@ This exercise introduces creating a Virtual Machine (VM) with **Azure CLI**, usi
 	   --resource-group $resource_group \
 	   --location northeurope \
 	   --name $vm_name \
-	   --image Ubuntu2204 \
+	   --image Ubuntu2404 \
 	   --size Standard_B1s \
 	   --admin-username azureuser \
 	   --generate-ssh-keys
