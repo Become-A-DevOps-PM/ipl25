@@ -1,13 +1,13 @@
 +++
 title = "Presentations"
 description = "Course presentations and slides"
-weight = 10
+weight = 7
 chapter = true
+head = "<label>Resources</label>"
 +++
 
 # Presentations
 
-Browse the course presentations below.
+Course presentations and lecture slides.
 
 {{< children />}}
-

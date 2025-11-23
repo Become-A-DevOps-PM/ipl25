@@ -1,13 +1,13 @@
 +++
 title = "Getting Started"
-description = "Introduction to DevOps PM"
+description = "Course introduction and setup"
 weight = 1
 chapter = true
+head = "<label>Start Here</label>"
 +++
 
 # Getting Started
 
-This chapter provides an introduction to the DevOps PM curriculum.
+Course introduction, setup guides, and technology stack overview.
 
 {{< children />}}
-
