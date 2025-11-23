@@ -71,7 +71,7 @@ When creating content for this Hugo site:
 1. **Exercises should follow the create-exercise template** from the 2024 project
 2. **Convert LEMP examples to Flask/Python** - IPL25 uses Python exclusively
 3. **Preserve frontmatter format** - Hugo uses TOML (`+++`)
-4. **Each exercise must stand alone** - No cross-references to other exercises
+4. **Each piece of content must stand alone** - No cross-references between articles, exercises, or other content within this project. This is critical for maintainability. Each article and exercise must be self-contained.
 5. **Use the 2024 content as source material** - Adapt, don't copy directly
 
 ### Technology Stack (IPL25 - No Alternatives)
@@ -234,7 +234,7 @@ When migrating content from the 2024 project:
 - Copy PHP code examples directly
 - Reference IPL24 file paths in public content
 - Include dates or "next week" references
-- Create cross-references between exercises
+- **Create cross-references between content** - Never link exercises to other exercises, articles to other articles, or exercises to articles within this project. Each piece must stand alone for maintainability.
 - Modify the 2024 reference project
 
 ### Content Sections to Develop
