@@ -110,6 +110,7 @@ Creating a VM through Azure CLI gives you precise control over the machine's con
 > ℹ **Concept Deep Dive**
 >
 > This command:
+>
 > - Creates a VM named `MyCLIVM`.
 > - Uses the latest Ubuntu 22.04 image.
 > - Generates SSH keys if not already available in `~/.ssh/id_rsa`.
@@ -120,8 +121,8 @@ Creating a VM through Azure CLI gives you precise control over the machine's con
 ssh-keygen -t rsa -b 2048
 ```
 
-This generates:
-
+> This generates:
+>
 > - `~/.ssh/id_rsa` (private key)
 > - `~/.ssh/id_rsa.pub` (public key)
 

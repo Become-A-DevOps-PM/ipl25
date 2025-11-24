@@ -116,8 +116,8 @@ Now that your VM is running, you need to access it remotely. Azure Cloud Shell p
    ssh azureuser@<VM_Public_IP>
    ```
 
-   - Replace `<VM_Public_IP>` with the public IP address of your VM, found in the **Overview** tab of the VM
-   - Answer **yes** on the question: *Are you sure you want to continue connecting (yes/no/[fingerprint])?*
+   - Replace `<VM_Public_IP>` with the public IP address of your VM, found in the _Overview_ tab of the VM
+   - Answer _yes_ on the question: _Are you sure you want to continue connecting (yes/no/[fingerprint])?_
 
 > ℹ **Concept Deep Dive**
 >
@@ -227,6 +227,6 @@ You've successfully provisioned a Virtual Machine in Azure using the portal whic
 > - Research the difference between SSH key and password authentication
 > - Investigate Network Security Groups and their rules
 
-## Done!
+## Done 🎉
 
 You have successfully provisioned a Virtual Machine in Azure using the portal and connected to it using Azure Cloud Shell. You also verified its operation by installing and testing the web server Nginx.
