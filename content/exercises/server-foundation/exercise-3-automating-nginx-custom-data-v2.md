@@ -96,6 +96,7 @@ Now that Nginx is running, you'll connect to the server and modify its default p
    ```bash
    ssh -i <private-key> azureuser@<VM_Public_IP>
    ```
+
    - Replace `<private-key>` with your private key file
    - Replace `<VM_Public_IP>` with the VM's public IP address
    - Don't forget to `chmod 400` the key if you are on Mac or Linux
@@ -154,6 +155,6 @@ You've successfully automated Nginx installation using Azure custom data scripts
 > - Research cloud-init directives for more advanced configuration options
 > - Experiment with multiple custom data scripts for different services
 
-## Done!
+## Done 🎉
 
 You have successfully automated the installation of Nginx using a custom data script and edited the default web page to display custom content.

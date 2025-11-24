@@ -41,9 +41,9 @@ Custom data files allow you to run scripts automatically when a VM boots for the
 2. **Add** the following content to the file:
 
    ```bash
-	#!/bin/bash
-	apt update
-	apt install nginx -y
+   #!/bin/bash
+   apt update
+   apt install nginx -y
    ```
 
 > **Concept Deep Dive**
@@ -63,38 +63,38 @@ The automation script combines all the individual Azure CLI commands you've lear
 2. **Add** the following content to the script:
 
    ```bash
-	#!/bin/bash
+   #!/bin/bash
 
-	# Variables
-	resource_group="MyOneClickGroup"
-	vm_name="MyOneClickVM"
-	location="northeurope"
-	custom_data_file="custom_data_nginx.sh"
+   # Variables
+   resource_group="MyOneClickGroup"
+   vm_name="MyOneClickVM"
+   location="northeurope"
+   custom_data_file="custom_data_nginx.sh"
 
-	# Create a resource group
-	echo "Creating resource group: $resource_group..."
-	az group create --name $resource_group --location $location
+   # Create a resource group
+   echo "Creating resource group: $resource_group..."
+   az group create --name $resource_group --location $location
 
-	# Create a virtual machine with custom data
-	echo "Creating virtual machine: $vm_name..."
-	az vm create \
-	   --resource-group $resource_group \
-	   --location $location \
-	   --name $vm_name \
-	   --image Ubuntu2404 \
-	   --size Standard_B1s \
-	   --admin-username azureuser \
-	   --generate-ssh-keys \
-	   --custom-data @$custom_data_file
+   # Create a virtual machine with custom data
+   echo "Creating virtual machine: $vm_name..."
+   az vm create \
+      --resource-group $resource_group \
+      --location $location \
+      --name $vm_name \
+      --image Ubuntu2404 \
+      --size Standard_B1s \
+      --admin-username azureuser \
+      --generate-ssh-keys \
+      --custom-data @$custom_data_file
 
-	# Open port 80 for HTTP traffic
-	echo "Opening port 80 for HTTP traffic..."
-	az vm open-port --resource-group $resource_group --name $vm_name --port 80
+   # Open port 80 for HTTP traffic
+   echo "Opening port 80 for HTTP traffic..."
+   az vm open-port --resource-group $resource_group --name $vm_name --port 80
 
-	# Retrieve public IP address of the VM
-	vm_ip=$(az vm show --resource-group $resource_group --name $vm_name --show-details --query publicIps -o tsv)
+   # Retrieve public IP address of the VM
+   vm_ip=$(az vm show --resource-group $resource_group --name $vm_name --show-details --query publicIps -o tsv)
 
-	echo "Deployment complete! Access your server at http://$vm_ip"
+   echo "Deployment complete! Access your server at http://$vm_ip"
    ```
 
 3. **Make** the script executable:
@@ -184,6 +184,6 @@ You've successfully created a one-click automation solution which:
 > - Add a custom HTML page to Nginx by extending the custom data script
 > - Create a corresponding cleanup script that deletes resources when you're done
 
-## Done!
+## Done 🎉
 
 You have successfully created a "one-click" solution to deploy an Azure VM, configure Nginx, and enable HTTP traffic using Bash scripting and custom data. This automation approach will serve as the foundation for more advanced Infrastructure as Code techniques in upcoming exercises.

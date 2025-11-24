@@ -87,16 +87,16 @@ Creating the VM is the core of this exercise. You'll configure compute resources
 
 4. **Click** "Review + Create", and then "Create"
 
-> ℹ **Concept Deep Dive**
->
-> - **VM Size:** Determines the CPU, memory, and storage capacity. For this exercise, `Standard_B1s` is cost-effective for learning purposes.
-> - **Inbound Ports:** Ensure HTTP (for web traffic) and SSH (for secure access) are open for connectivity.
->
-> ⚠ **Common Mistakes**
->
-> - Forgetting to open port 22 will prevent SSH access to your VM
-> - Choosing the wrong region can increase latency and costs
-> - Using a weak password compromises security
+   > ℹ **Concept Deep Dive**
+   >
+   > - **VM Size:** Determines the CPU, memory, and storage capacity. For this exercise, `Standard_B1s` is cost-effective for learning purposes.
+   > - **Inbound Ports:** Ensure HTTP (for web traffic) and SSH (for secure access) are open for connectivity.
+   >
+   > ⚠ **Common Mistakes**
+   >
+   > - Forgetting to open port 22 will prevent SSH access to your VM
+   > - Choosing the wrong region can increase latency and costs
+   > - Using a weak password compromises security
 
 5. **Wait** for Azure to provision the VM. Once completed, navigate to the **Virtual Machines** section and locate `LabVM`
 

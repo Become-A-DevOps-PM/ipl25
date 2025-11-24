@@ -98,6 +98,7 @@ Now you will establish a secure shell connection to your virtual machine. SSH en
    ```bash
    ssh -i ~/Downloads/LabSSHKey.pem azureuser@<VM_Public_IP>
    ```
+
    - Replace `<VM_Public_IP>` with the public IP address you copied.
    - On Windows you might need to use the absolute path for the key. You can usually do that by drag-and-drop the key `LabSSHKey.pem` from the file explorer into the Terminal
 
@@ -112,6 +113,7 @@ Understanding the Linux filesystem structure is essential for server administrat
    ```bash
    ls /
    ```
+
    - Key directories:
      - `/home`: User home directories.
      - `/etc`: Configuration files.
@@ -137,6 +139,7 @@ Bash scripts automate repetitive tasks and ensure consistent server configuratio
      ```bash
      nano install_nginx.sh
      ```
+
    - **Add** the following content to the file:
 
      ```bash
@@ -166,6 +169,7 @@ Bash scripts automate repetitive tasks and ensure consistent server configuratio
      ```bash
      systemctl status nginx
      ```
+
      Ensure the status shows `active (running)`.
 
    - Test Nginx using `curl`:
@@ -173,6 +177,7 @@ Bash scripts automate repetitive tasks and ensure consistent server configuratio
      ```bash
      curl localhost
      ```
+
      The output should include the default Nginx HTML content, such as `Welcome to nginx!`.
 
 > ℹ **Concept Deep Dive**
@@ -180,6 +185,7 @@ Bash scripts automate repetitive tasks and ensure consistent server configuratio
 > **Systemctl and the Init System**
 >
 > The `systemctl` command is used to interact with the system's **init system** (often `systemd` on modern Linux distributions). It is responsible for managing services, such as starting, stopping, enabling, or checking the status of services like Nginx.
+>
 > - `start`: Starts the service immediately.
 > - `enable`: Configures the service to start automatically at boot.
 > - `status`: Displays the current status of the service.
@@ -221,6 +227,6 @@ You've successfully provisioned an Ubuntu VM with SSH key authentication and exp
 > - Modify the bash script to also enable Nginx to start on boot with `systemctl enable nginx`
 > - Try connecting from a different device using the same key pair
 
-## Done!
+## Done 🎉
 
 You have successfully provisioned a VM using Azure's Generate Key Pair feature, connected securely using SSH, and explored the Linux filesystem and basic commands.

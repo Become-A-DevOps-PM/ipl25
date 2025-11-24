@@ -51,6 +51,7 @@ Resource groups serve as containers for all resources within Azure. Creating one
    ```bash
    az group create --name MyCLIDemoGroup --location northeurope
    ```
+
    - **`--name`**: Specifies the name of the resource group (e.g., `MyCLIDemoGroup`).
    - **`--location`**: Sets the region where the resources in the group will be located (e.g., `northeurope`).
 
@@ -60,24 +61,23 @@ Resource groups serve as containers for all resources within Azure. Creating one
 >
 > ✓ **Quick check:** Review the output to confirm successful creation. You should see a JSON response similar to:
 >
->    ```json
->    {
->      "id": "/subscriptions/<subscription-id>/resourceGroups/MyCLIDemoGroup",
->      "location": "eastus",
->      "name": "MyCLIDemoGroup",
->      "properties": {
->        "provisioningState": "Succeeded"
->      }
->    }
->    ```
+> ```json
+> {
+>   "id": "/subscriptions/<subscription-id>/resourceGroups/MyCLIDemoGroup",
+>   "location": "eastus",
+>   "name": "MyCLIDemoGroup",
+>   "properties": {
+>     "provisioningState": "Succeeded"
+>   }
+> }
+> ```
 >
 > In the Azure Portal under **Resource groups** you should also see it listed.
->
 > You can also list all resource groups in your subscription by running the command:
 >
->    ```bash
->    az group list --output table
->    ```
+> ```bash
+> az group list --output table
+> ```
 
 ### **Step 3:** Clean Up Resources (Optional)
 
@@ -88,6 +88,7 @@ Deleting unused resource groups prevents unnecessary charges and keeps your subs
    ```bash
    az group delete --name MyCLIDemoGroup --no-wait --yes
    ```
+
    - **`--no-wait`**: Ensures the command returns immediately without waiting for the operation to complete.
    - **`--yes`**: Confirms the deletion without additional prompts.
 
@@ -117,6 +118,6 @@ You've successfully created and managed a resource group using Azure CLI which:
 > - Explore `az group list` with different output formats (json, yaml, tsv)
 > - Use `az configure` to set default values for location and resource group
 
-## Done!
+## Done 🎉
 
 You have successfully created and managed a resource group using Azure CLI, gaining hands-on experience with command-line operations in Azure.

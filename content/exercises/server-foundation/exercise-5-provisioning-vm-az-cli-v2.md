@@ -125,7 +125,7 @@ ssh-keygen -t rsa -b 2048
 >
 > - `~/.ssh/id_rsa` (private key)
 > - `~/.ssh/id_rsa.pub` (public key)
-
+>
 > ✓ **Quick check:** Review the output to confirm successful creation. You should see a JSON response similar to:
 
 ```json
