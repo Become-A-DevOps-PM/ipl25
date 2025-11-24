@@ -3,6 +3,7 @@ title = "Inside a Physical Server"
 weight = 3
 date = 2024-11-17
 draft = false
+hidden = true
 +++
 
 [Watch the presentation]({{< relref "inside-a-physical-server-slides.md" >}})

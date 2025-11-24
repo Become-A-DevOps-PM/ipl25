@@ -3,6 +3,7 @@ title = "Common Server Roles"
 weight = 2
 date = 2024-11-17
 draft = false
+hidden = true
 +++
 
 [Watch the presentation]({{< relref "common-server-roles-slides.md" >}})

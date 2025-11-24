@@ -3,6 +3,7 @@ title = "What is a Server?"
 weight = 1
 date = 2024-11-17
 draft = false
+hidden = true
 +++
 
 [Watch the presentation]({{< relref "what-is-a-server-slides.md" >}})

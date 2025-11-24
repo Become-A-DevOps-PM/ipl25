@@ -3,6 +3,7 @@ title = "Inside a Virtual Server"
 weight = 4
 date = 2024-11-17
 draft = false
+hidden = true
 +++
 
 [Watch the presentation]({{< relref "inside-a-virtual-server-slides.md" >}})
