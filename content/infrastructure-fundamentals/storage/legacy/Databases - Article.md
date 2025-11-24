@@ -3,11 +3,12 @@ title = "Databases"
 weight = 2
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "Databases - Slides.md" >}})
+[Watch the presentation]({{< relref "databases-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "Databases - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "databases-slides-swe.md" >}})
 
 <!-- # Databases -->
 

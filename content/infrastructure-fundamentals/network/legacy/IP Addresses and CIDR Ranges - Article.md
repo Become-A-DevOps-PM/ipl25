@@ -3,11 +3,12 @@ title = "IP Addresses and CIDR Ranges"
 weight = 2
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "IP Addresses and CIDR Ranges - Slides.md" >}})
+[Watch the presentation]({{< relref "ip-addresses-and-cidr-ranges-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "IP Addresses and CIDR Ranges - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "ip-addresses-and-cidr-ranges-slides-swe.md" >}})
 
 <!-- # IP Addresses and CIDR Ranges -->
 

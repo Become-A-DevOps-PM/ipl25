@@ -3,11 +3,12 @@ title = "Storage"
 weight = 3
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "Storage - Slides.md" >}})
+[Watch the presentation]({{< relref "storage-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "Storage - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "storage-slides-swe.md" >}})
 
 <!-- # Storage -->
 

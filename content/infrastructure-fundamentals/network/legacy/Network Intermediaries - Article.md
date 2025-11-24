@@ -3,11 +3,12 @@ title = "Network Intermediaries"
 weight = 6
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "Network Intermediaries - Slides.md" >}})
+[Watch the presentation]({{< relref "network-intermediaries-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "Network Intermediaries - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "network-intermediaries-slides-swe.md" >}})
 
 <!-- # Network Intermediaries -->
 

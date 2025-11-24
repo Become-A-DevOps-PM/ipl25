@@ -3,11 +3,12 @@ title = "What is Persistence?"
 weight = 1
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "What is Persistence - Slides.md" >}})
+[Watch the presentation]({{< relref "what-is-persistence-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "What is Persistence - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "what-is-persistence-slides-swe.md" >}})
 
 <!-- # What is Persistence? -->
 

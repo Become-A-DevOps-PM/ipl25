@@ -3,11 +3,12 @@ title = "Firewalls"
 weight = 4
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "Firewalls - Slides.md" >}})
+[Watch the presentation]({{< relref "firewalls-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "Firewalls - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "firewalls-slides-swe.md" >}})
 
 <!-- # Firewalls -->
 

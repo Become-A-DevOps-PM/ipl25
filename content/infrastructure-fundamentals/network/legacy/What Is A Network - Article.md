@@ -3,12 +3,13 @@ title = "What is a Network?"
 weight = 1
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
 
-[Watch the presentation]({{< relref "What Is A Network - Slides.md" >}})
+[Watch the presentation]({{< relref "what-is-a-network-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "What Is A Network - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "what-is-a-network-slides-swe.md" >}})
 
 <!-- # What is a Network? -->
 

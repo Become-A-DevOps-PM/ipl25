@@ -3,11 +3,12 @@ title = "The OSI Model"
 weight = 5
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "The OSI Model - Slides.md" >}})
+[Watch the presentation]({{< relref "the-osi-model-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "The OSI Model - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "the-osi-model-slides-swe.md" >}})
 
 <!-- # The OSI Model -->
 

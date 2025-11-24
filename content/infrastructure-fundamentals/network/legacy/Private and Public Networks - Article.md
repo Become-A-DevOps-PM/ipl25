@@ -3,11 +3,12 @@ title = "Private and Public Networks"
 weight = 3
 date = 2024-11-19
 draft = false
+hidden = true
 +++
 
-[Watch the presentation]({{< relref "Private and Public Networks - Slides.md" >}})
+[Watch the presentation]({{< relref "private-and-public-networks-slides.md" >}})
 
-[Se presentationen på svenska]({{< relref "Private and Public Networks - Slides Swe.md" >}})
+[Se presentationen på svenska]({{< relref "private-and-public-networks-slides-swe.md" >}})
 
 <!-- # Private and Public Networks -->
 
