@@ -350,17 +350,34 @@ Install the DocDock theme as a Git submodule and create overrides to fix compati
    <script src="{{"theme-original/script.js" | relURL}}"></script>
    ```
 
+8. **Create** the pagination.html override to fix Hugo v0.148+ Pager API:
+
+   > `layouts/partials/pagination.html`
+
+   ```html
+   <nav class="pagination" role="navigation">
+   	{{if .HasPrev}}
+   	    <a class="newer-posts" href="{{ .Prev.URL }}">&larr; {{T "Previous-Pages"}}</a>
+   	{{end}}
+   	<span class="page-number">{{T "Page"}} {{ .PageNumber }} {{T "pagination-on"}} {{.TotalPages}}</span>
+   	{{if .HasNext}}
+   	    <a class="older-posts" href="{{ .Next.URL }}">{{T "Next-Pages"}} &rarr;</a>
+   	{{end}}
+   </nav>
+   ```
+
 > ℹ **Concept Deep Dive**
 >
-> Hugo's template lookup order checks your project's `layouts/` directory before the theme's. This allows you to override specific theme files without modifying the theme itself. The main compatibility issues with DocDock are: (1) accessing `.File` properties on pages without backing files causes nil pointer errors, (2) `.Site.IsMultiLingual` was deprecated in favor of `hugo.IsMultilingual`. Using project overrides keeps the theme submodule pristine and updatable.
+> Hugo's template lookup order checks your project's `layouts/` directory before the theme's. This allows you to override specific theme files without modifying the theme itself. The main compatibility issues with DocDock are: (1) accessing `.File` properties on pages without backing files causes nil pointer errors, (2) `.Site.IsMultiLingual` was deprecated in favor of `hugo.IsMultilingual`, (3) the Pager API changed in Hugo v0.148+ where `.Prev.RelPermalink` and `.Next.RelPermalink` no longer exist and must be replaced with `.Prev.URL` and `.Next.URL`. Using project overrides keeps the theme submodule pristine and updatable.
 >
 > ⚠ **Common Mistakes**
 >
 > - Editing theme files directly instead of creating overrides makes theme updates destructive
 > - Missing the `with .File` guard causes nil pointer errors on taxonomy pages
 > - Forgetting to create the full directory path for overrides causes them to be ignored
+> - Using `.RelPermalink` on Pager objects in Hugo v0.148+ causes template execution errors
 >
-> ✓ **Quick check:** Five override files exist in `layouts/partials/`
+> ✓ **Quick check:** Six override files exist in `layouts/partials/`
 
 ### **Step 4:** Configure Hugo for GitHub Pages
 
