@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Inuti en Fysisk Server</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    INUTI EN<br>
+                    FYSISK<br>
+                    SERVER
+                </h1>
+
+                <p class="subtitle">Infrastrukturgrunder</p>
+                <p class="course-info">Server Hårdvaruarkitektur</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: Introduction -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Vad Gör en Server Annorlunda?</h2>
+
+                <div class="fragment info-box">
+                    <p>Servrar hanterar <span class="highlight">produktionsarbetsbelastningar</span> och fungerar <span class="highlight">kontinuerligt</span>, ofta i flera år utan avstängning</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Hårdvara designad för <span class="highlight">tillförlitlighet</span>, <span class="highlight">servicebarhet</span> och prestanda under varaktig belastning</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Samma grundläggande komponenter som stationära datorer, men optimerade för <span class="highlight">serverarbetsbelastningar</span></p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: CPU -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Central Processing Unit (CPU)</h2>
+
+                <div class="fragment info-box">
+                    <p>CPU:n exekverar instruktioner som utgör alla serveroperationer</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Flera kärnor</span> (8, 16, 32+) möjliggör parallell exekvering av uppgifter</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Intel Xeon</span> och <span class="highlight">AMD EPYC</span> processorer dominerar servermarknaden</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Dual-socket konfigurationer</span> stödjer två fysiska CPU:er, vilket fördubblar kärnor och minnesbandbredd</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Stöd för <span class="highlight">ECC memory</span> och avancerade funktioner för tillförlitlighet</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Memory -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Random Access Memory (RAM)</h2>
+
+                <div class="fragment info-box">
+                    <p>RAM tillhandahåller <span class="highlight">temporär lagring</span> för data som CPU:n aktivt bearbetar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">ECC (Error-Correcting Code) memory</span> upptäcker och korrigerar single-bit fel automatiskt</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Förhindrar krascher och datakorruption från kosmisk strålning eller elektriska störningar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Server RAM-kapacitet: <span class="highlight">16 GB</span> (små arbetsbelastningar) till <span class="highlight">flera terabyte</span> (stora databaser)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Minnesintensiva applikationer som in-memory databaser kräver avsevärda mängder RAM</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Storage -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Storage Drives</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">HDDs (Hard Disk Drives):</span> Snurrande magnetiska plattor, hög kapacitet, lägre kostnad, mekanisk rörelse begränsar hastigheten</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">SSDs (Solid-State Drives):</span> Flash memory, mycket snabbare, inga rörliga delar, högre kostnad per gigabyte</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">RAID (Redundant Array of Independent Disks):</span> Kombinerar flera diskar för redundans eller prestanda</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">RAID 1:</span> Speglar data över två diskar för redundans</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">RAID 10:</span> Kombinerar spegling med striping för både redundans och prestanda</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: Infrastructure Components -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Infrastrukturkomponenter</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Motherboard:</span> Ansluter alla komponenter, stödjer flera CPU:er och stora mängder RAM, inkluderar BMC för fjärrhantering</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Power Supply Unit (PSU):</span> Konverterar AC till DC-ström, redundanta PSU:er för kontinuerlig drift, hot-swappable design</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Cooling Systems:</span> Fläktar och kylflänsar upprätthåller säkra driftstemperaturer, justerar hastighet baserat på sensorer</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Networking & Expansion -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Nätverks- och Expansionsmöjligheter</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Network Interface Cards (NICs):</span> Stödjer 1 Gbps, 10 Gbps, 25 Gbps eller snabbare hastigheter</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Flera NICs för <span class="highlight">produktionstrafik</span>, <span class="highlight">hanteringsåtkomst</span> och <span class="highlight">lagringsnätverk</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Hardware offload-funktioner frigör CPU-cykler för applikationsarbete</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">PCIe Expansion Slots:</span> Lägg till specialiserad hårdvara som GPUs, storage controllers eller säkerhetsmoduler</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Olika slot-storlekar (x4, x8, x16) erbjuder varierande bandbreddskapacitet</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: Design for Continuous Operation -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Design för Kontinuerlig Drift</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Hot-swappable komponenter:</span> Byt ut felaktiga diskar eller PSU:er utan avstängning</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Rack-mountable chassis:</span> Standard 19-tums racks, mäts i rack units (U), möjliggör högdensitets-utplaceringar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Remote management interfaces:</span> IPMI, iLO (HP), iDRAC (Dell) erbjuder out-of-band åtkomst</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Slå på/av servrar, få åtkomst till konsolen, övervaka hårdvaruhälsa <span class="highlight">på distans</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Nödvändigt för att hantera servrar i avlägsna datacenter</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: Key Takeaway -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <p class="big-text">Fysiska servrar innehåller samma grundläggande komponenter som stationära datorer, men i konfigurationer designade för <span class="highlight">kontinuerlig drift</span>, <span class="highlight">tillförlitlighet</span> och <span class="highlight">servicebarhet</span></p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: 'c/t',
+            history: true,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.0
+        });
+    </script>
+</body>
+</html>

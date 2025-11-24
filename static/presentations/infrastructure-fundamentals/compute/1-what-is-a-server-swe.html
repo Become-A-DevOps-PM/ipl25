@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Vad är en Server?</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    VAD ÄR<br>
+                    EN<br>
+                    SERVER?
+                </h1>
+
+                <p class="subtitle">Infrastrukturgrunder</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: The Server Concept -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Server-konceptet</h2>
+
+                <div class="fragment info-box">
+                    <p>En <span class="highlight">server</span> tillhandahåller compute-resurser som bearbetar förfrågningar och levererar tjänster över ett nätverk</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Hårdvarudefinition:</span> En fysisk dator optimerad för kontinuerlig drift och nätverkstillgänglighet</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Mjukvarudefinition:</span> Ett program som lyssnar efter förfrågningar och skickar svar (web server, database server, application server)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Båda definitionerna samexisterar: "database server" syftar både på PostgreSQL-processen och maskinen som kör den</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: Client-Server Model -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Client-Server Model</h2>
+
+                <div class="fragment info-box">
+                    <p>Ett system (<span class="highlight">server</span>) tillhandahåller tjänster som andra system (<span class="highlight">clients</span>) konsumerar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Centraliserad resurshantering:</span> En enskild server underhåller den auktoritativa kopian av data och tjänster</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Skalbarhet:</span> Att lägga till clients kräver inte duplicering av kärntjänsten—bara serverns kapacitet att hantera samtidiga förfrågningar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Exempel: Webbläsare begär sidor från en web server, mobilapp frågar en API server, backend hämtar data från en database server</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Deployment Models Overview -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Server Deployment-modeller</h2>
+
+                <div class="fragment info-box">
+                    <p>Samma applikationslogik kan köras på olika infrastrukturgrunder</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Physical Servers:</span> Dedikerad hårdvara, maximal prestanda, fullständig kontroll</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Machines:</span> Mjukvarubaserad emulering, bättre utnyttjande, snabb provisionering</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Containers:</span> Lättviktig isolering, millisekund startup, effektiv skalning</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless Functions:</span> Händelsedriven exekvering, automatisk skalning, ingen infrastrukturhantering</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Physical Servers & Virtual Machines -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Physical Servers & Virtual Machines</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Physical Servers (Bare-Metal):</span> OS körs direkt på hårdvara, maximal prestanda, operationell overhead (upphandling, installation, underhåll)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Machines:</span> Hypervisor-lager hanterar hårdvara, flera VMs på samma host, varje VM har sin egen OS-instans</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">VM-fördelar:</span> Bättre hårdvaruutnyttjande, snabb provisionering (minuter vs veckor), förbrukningsbaserad prissättning i cloud-plattformar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">VM-avvägningar:</span> 2-10% prestandaoverhead, full OS-vikt per instans, OS-underhåll för varje VM</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: Containers & Serverless -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Containers & Serverless</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Containers:</span> Paketerar applikation med beroenden, delar host OS kernel, isolerade processer</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Container-fördelar:</span> Lättviktig (millisekund startup), konsekventa miljöer över dev/test/prod, effektiv skalning med orkestrering (Kubernetes)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless Functions:</span> Kod exekveras som svar på händelser (HTTP request, queue message, timer), plattformen hanterar all infrastruktur</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless-fördelar:</span> Inga servrar att hantera, automatisk skalning, pay-per-execution-fakturering, idealisk för varierande arbetsbelastningar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless-begränsningar:</span> Exekveringstidsbegränsningar (5-15 min), cold start-latens, bäst för stateless-operationer</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Server Roles -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Server-roller</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Web Servers:</span> Accepterar HTTP/HTTPS-förfrågningar, serverar statiska filer eller proxar till application servers (nginx, Apache)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Application Servers:</span> Exekverar affärslogik, genererar dynamiskt innehåll, bearbetar användarförfrågningar (Gunicorn, uWSGI för Python)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Database Servers:</span> Hanterar persistent datalagring, upprätthåller integritet, optimerar queries, hanterar samtidig åtkomst (PostgreSQL, MySQL)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">File Servers:</span> Tillhandahåller centraliserad lagring över nätverk, implementerar åtkomstkontroller (NFS, SMB, eller cloud object storage)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Produktionssystem kombinerar typiskt flera roller som arbetar tillsammans—förfrågningar flödar från web server → application server → database server</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: Closing Slide -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <div class="big-symbol">💡</div>
+                    <p class="big-text">Viktig insikt</p>
+                    <p class="subtitle" style="margin-top: 2em; font-size: 1.5em; max-width: 900px;">Att förstå server deployment-modeller och roller möjliggör informerade infrastrukturbeslut som matchar applikationskrav</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: 'c/t',
+            history: true,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.0
+        });
+    </script>
+</body>
+</html>

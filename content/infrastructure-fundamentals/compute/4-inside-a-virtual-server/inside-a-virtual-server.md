@@ -5,9 +5,9 @@ date = 2024-11-17
 draft = false
 +++
 
-[Watch the presentation]({{< relref "inside-a-virtual-server-slides.md" >}})
+[Watch the presentation](/presentations/infrastructure-fundamentals/compute/4-inside-a-virtual-server.html)
 
-[Se presentationen på svenska]({{< relref "inside-a-virtual-server-slides-swe.md" >}})
+[Se presentationen på svenska](/presentations/infrastructure-fundamentals/compute/4-inside-a-virtual-server-swe.html)
 
 ---
 

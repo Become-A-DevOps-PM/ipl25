@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>What is a Server?</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    WHAT IS<br>
+                    A<br>
+                    SERVER?
+                </h1>
+
+                <p class="subtitle">Infrastructure Fundamentals</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: The Server Concept -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">The Server Concept</h2>
+
+                <div class="fragment info-box">
+                    <p>A <span class="highlight">server</span> provides compute resources that process requests and deliver services over a network</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Hardware definition:</span> A physical computer optimized for continuous operation and network accessibility</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Software definition:</span> Any program that listens for requests and sends responses (web server, database server, application server)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Both definitions coexist: "database server" refers to both the PostgreSQL process and the machine running it</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: Client-Server Model -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">The Client-Server Model</h2>
+
+                <div class="fragment info-box">
+                    <p>One system (the <span class="highlight">server</span>) provides services that other systems (<span class="highlight">clients</span>) consume</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Centralized resource management:</span> A single server maintains the authoritative copy of data and services</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Scalability:</span> Adding clients doesn't require duplicating the core service—only the server's capacity to handle concurrent requests</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Examples: Web browser requests pages from a web server, mobile app queries an API server, backend retrieves data from a database server</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Deployment Models Overview -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Server Deployment Models</h2>
+
+                <div class="fragment info-box">
+                    <p>The same application logic can run on different infrastructure foundations</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Physical Servers:</span> Dedicated hardware, maximum performance, complete control</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Machines:</span> Software-based emulation, better utilization, rapid provisioning</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Containers:</span> Lightweight isolation, millisecond startup, efficient scaling</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless Functions:</span> Event-driven execution, automatic scaling, no infrastructure management</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Physical Servers & Virtual Machines -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Physical Servers & Virtual Machines</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Physical Servers (Bare-Metal):</span> OS runs directly on hardware, maximum performance, operational overhead (procurement, installation, maintenance)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Machines:</span> Hypervisor layer manages hardware, multiple VMs on same host, each VM has its own OS instance</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">VM Benefits:</span> Better hardware utilization, rapid provisioning (minutes vs weeks), consumption-based pricing in cloud platforms</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">VM Trade-offs:</span> 2-10% performance overhead, full OS weight per instance, OS-level maintenance for each VM</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: Containers & Serverless -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Containers & Serverless</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Containers:</span> Package application with dependencies, share host OS kernel, isolated processes</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Container Benefits:</span> Lightweight (millisecond startup), consistent environments across dev/test/prod, efficient scaling with orchestration (Kubernetes)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless Functions:</span> Code executes in response to events (HTTP request, queue message, timer), platform manages all infrastructure</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless Benefits:</span> No servers to manage, automatic scaling, pay-per-execution billing, ideal for variable workloads</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Serverless Constraints:</span> Execution time limits (5-15 min), cold start latency, best for stateless operations</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Server Roles -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Server Roles</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Web Servers:</span> Accept HTTP/HTTPS requests, serve static files or proxy to application servers (nginx, Apache)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Application Servers:</span> Execute business logic, generate dynamic content, process user requests (Gunicorn, uWSGI for Python)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Database Servers:</span> Manage persistent data storage, enforce integrity, optimize queries, handle concurrent access (PostgreSQL, MySQL)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">File Servers:</span> Provide centralized storage over network, implement access controls (NFS, SMB, or cloud object storage)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Production systems typically combine multiple roles working together—request flows from web server → application server → database server</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: Closing Slide -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <div class="big-symbol">💡</div>
+                    <p class="big-text">Key Takeaway</p>
+                    <p class="subtitle" style="margin-top: 2em; font-size: 1.5em; max-width: 900px;">Understanding server deployment models and roles enables informed infrastructure decisions that match application requirements</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: 'c/t',
+            history: true,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.0
+        });
+    </script>
+</body>
+</html>

@@ -5,9 +5,9 @@ date = 2024-11-17
 draft = false
 +++
 
-[Watch the presentation]({{< relref "common-server-roles-slides.md" >}})
+[Watch the presentation](/presentations/infrastructure-fundamentals/compute/2-common-server-roles.html)
 
-[Se presentationen på svenska]({{< relref "common-server-roles-slides-swe.md" >}})
+[Se presentationen på svenska](/presentations/infrastructure-fundamentals/compute/2-common-server-roles-swe.html)
 
 ---
 

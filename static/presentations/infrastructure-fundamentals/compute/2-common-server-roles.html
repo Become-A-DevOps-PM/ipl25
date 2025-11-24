@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Common Server Roles</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    COMMON<br>
+                    SERVER<br>
+                    ROLES
+                </h1>
+
+                <p class="subtitle">Infrastructure Fundamentals</p>
+                <p class="course-info">Understanding Specialized Server Functions</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: Overview -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">What Are Server Roles?</h2>
+
+                <div class="fragment info-box">
+                    <p>Servers are categorized by the <span class="highlight">services they provide</span>. Rather than monolithic systems, organizations deploy servers with <span class="highlight">defined roles</span> optimized for specific tasks.</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>This architecture enables <span class="highlight">independent scaling</span>, <span class="highlight">fault isolation</span>, and <span class="highlight">optimized performance</span> for each component.</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 3: Common Server Roles Landscape -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">The Server Role Landscape</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Database Server</span> - Stores and manages structured data with integrity constraints</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">File Server</span> - Centralized file storage with network access and permissions</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Mail Server</span> - Handles email operations: sending, receiving, routing, storing</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">DNS Server</span> - Translates domain names to IP addresses</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">DHCP Server</span> - Dynamically assigns IP addresses to network devices</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 4: Web Servers -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Web Servers</h2>
+
+                <div class="fragment info-box">
+                    <p>Accept <span class="highlight">HTTP/HTTPS requests</span> from clients and return responses</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Static content</span> (HTML, CSS, images) - served directly from disk</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Dynamic content</span> - delegated to application servers for processing</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Key capabilities: <span class="highlight">SSL/TLS termination</span>, response compression, caching, request routing, managing thousands of concurrent connections</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Examples: <span class="highlight">nginx</span> (event-driven), <span class="highlight">Apache</span> (process-based)</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 5: Application Servers -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Application Servers</h2>
+
+                <div class="fragment info-box">
+                    <p>Execute <span class="highlight">business logic</span> and generate dynamic content</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Provide <span class="highlight">runtime environment</span> for application code: Python (Gunicorn, uWSGI), Java (Tomcat, WildFly)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Handle request processing, <span class="highlight">database connectivity</span>, session management, resource allocation</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Typically sit <span class="highlight">behind web servers</span> - web server handles SSL, static content, routing; application server executes logic</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Scale horizontally</span> - deploy multiple instances behind load balancer</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 6: Reverse Proxies -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Reverse Proxies</h2>
+
+                <div class="fragment info-box">
+                    <p>Sit <span class="highlight">between clients and backend servers</span>, acting on behalf of servers</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Load balancing</span> - distribute requests across multiple backends (round-robin, least connections, weighted)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">SSL termination</span> - offload encryption/decryption from backends</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Caching</span> - store responses and serve directly for identical requests</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Request routing</span> - direct to different backends based on URL, headers, criteria</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Examples: <span class="highlight">nginx</span>, <span class="highlight">HAProxy</span>, Azure Application Gateway, AWS ALB</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 7: Bastion Hosts -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Bastion Hosts</h2>
+
+                <div class="fragment info-box">
+                    <p>Provide <span class="highlight">secure administrative access</span> to servers in private networks</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Controlled entry point</span> - only server with both external accessibility and internal network access</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Reduced attack surface</span> - internal servers have no administrative ports exposed to internet</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Centralized access control</span> - single point for authentication, MFA enforcement</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Audit logging</span> - all administrative sessions logged at single location</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Cloud services: <span class="highlight">Azure Bastion</span>, AWS Systems Manager Session Manager</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 8: How Roles Interact -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">How These Roles Interact</h2>
+
+                <div class="fragment info-box">
+                    <p>Typical web application flow:</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>1. Clients connect to <span class="highlight">reverse proxy</span> (SSL termination, routing)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>2. Static content served directly; dynamic requests forwarded to <span class="highlight">application servers</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>3. Application servers execute business logic, query <span class="highlight">database servers</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>4. Administrators access all servers through <span class="highlight">bastion host</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Architecture scales from <span class="highlight">single VM</span> (all roles combined) to <span class="highlight">distributed systems</span> (independent scaling per role)</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 9: Closing Slide -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <div class="big-symbol">🎯</div>
+                    <div class="big-text">
+                        MATCH INFRASTRUCTURE<br>
+                        TO FUNCTION
+                    </div>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            width: 1920,
+            height: 1080,
+            margin: 0,
+            minScale: 1,
+            maxScale: 1,
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+            transition: 'fade',
+            transitionSpeed: 'default'
+        });
+    </script>
+</body>
+</html>

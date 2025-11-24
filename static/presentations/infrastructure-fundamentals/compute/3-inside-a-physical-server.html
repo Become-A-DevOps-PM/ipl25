@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Inside a Physical Server</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    INSIDE A<br>
+                    PHYSICAL<br>
+                    SERVER
+                </h1>
+
+                <p class="subtitle">Infrastructure Fundamentals</p>
+                <p class="course-info">Server Hardware Architecture</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: Introduction -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">What Makes a Server Different?</h2>
+
+                <div class="fragment info-box">
+                    <p>Servers handle <span class="highlight">production workloads</span> and operate <span class="highlight">continuously</span>, often for years without shutdown</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Hardware designed for <span class="highlight">reliability</span>, <span class="highlight">serviceability</span>, and performance under sustained load</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Same fundamental components as desktop computers, but optimized for <span class="highlight">server workloads</span></p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: CPU -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Central Processing Unit (CPU)</h2>
+
+                <div class="fragment info-box">
+                    <p>The CPU executes instructions that constitute all server operations</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Multiple cores</span> (8, 16, 32+) allow parallel execution of tasks</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Intel Xeon</span> and <span class="highlight">AMD EPYC</span> processors dominate the server market</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Dual-socket configurations</span> support two physical CPUs, doubling cores and memory bandwidth</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Support for <span class="highlight">ECC memory</span> and advanced features for reliability</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Memory -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Random Access Memory (RAM)</h2>
+
+                <div class="fragment info-box">
+                    <p>RAM provides <span class="highlight">temporary storage</span> for data the CPU is actively processing</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">ECC (Error-Correcting Code) memory</span> detects and corrects single-bit errors automatically</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Prevents crashes and data corruption from cosmic rays or electrical interference</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Server RAM capacity: <span class="highlight">16 GB</span> (small workloads) to <span class="highlight">multiple terabytes</span> (large databases)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Memory-intensive applications like in-memory databases require substantial RAM</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Storage -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Storage Drives</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">HDDs (Hard Disk Drives):</span> Spinning magnetic platters, high capacity, lower cost, mechanical movement limits speed</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">SSDs (Solid-State Drives):</span> Flash memory, much faster, no moving parts, higher cost per gigabyte</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">RAID (Redundant Array of Independent Disks):</span> Combines multiple drives for redundancy or performance</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">RAID 1:</span> Mirrors data across two drives for redundancy</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">RAID 10:</span> Combines mirroring with striping for both redundancy and performance</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: Infrastructure Components -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Infrastructure Components</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Motherboard:</span> Connects all components, supports multiple CPUs and large amounts of RAM, includes BMC for remote management</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Power Supply Unit (PSU):</span> Converts AC to DC power, redundant PSUs for continuous operation, hot-swappable designs</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Cooling Systems:</span> Fans and heat sinks maintain safe operating temperatures, adjusts speed based on sensors</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Networking & Expansion -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Network & Expansion Capabilities</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Network Interface Cards (NICs):</span> Support 1 Gbps, 10 Gbps, 25 Gbps or faster speeds</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Multiple NICs for <span class="highlight">production traffic</span>, <span class="highlight">management access</span>, and <span class="highlight">storage networks</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Hardware offload capabilities free CPU cycles for application work</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">PCIe Expansion Slots:</span> Add specialized hardware like GPUs, storage controllers, or security modules</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Different slot sizes (x4, x8, x16) provide varying bandwidth capabilities</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: Design for Continuous Operation -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Design for Continuous Operation</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Hot-swappable components:</span> Replace failed drives or PSUs without shutdown</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Rack-mountable chassis:</span> Standard 19-inch racks, measured in rack units (U), enables high-density deployments</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Remote management interfaces:</span> IPMI, iLO (HP), iDRAC (Dell) provide out-of-band access</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Power servers on/off, access console, monitor hardware health <span class="highlight">remotely</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Essential for managing servers in remote data centers</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: Key Takeaway -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <p class="big-text">Physical servers contain the same fundamental components as desktop computers, but in configurations designed for <span class="highlight">continuous operation</span>, <span class="highlight">reliability</span>, and <span class="highlight">serviceability</span></p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: 'c/t',
+            history: true,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.0
+        });
+    </script>
+</body>
+</html>

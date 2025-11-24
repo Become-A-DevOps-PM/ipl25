@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Inside a Virtual Server</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    INSIDE A<br>
+                    VIRTUAL<br>
+                    SERVER
+                </h1>
+
+                <p class="subtitle">Infrastructure Fundamentals</p>
+                <p class="course-info">Understanding Virtualization Architecture</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: What is Virtualization? -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">What is Virtualization?</h2>
+
+                <div class="fragment info-box">
+                    <p>A <span class="highlight">virtual server</span> (VM) is a software-based emulation of a physical computer that runs its own operating system and applications</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>From the software's perspective, the VM appears to be a <span class="highlight">dedicated physical machine</span> with complete isolation from other VMs</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Multiple VMs can share the same physical hardware, improving <span class="highlight">resource utilization</span> and reducing costs</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: The Hypervisor -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">The Hypervisor Layer</h2>
+
+                <div class="fragment info-box">
+                    <p>The <span class="highlight">hypervisor</span> manages physical hardware resources and allocates them to virtual machines</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Type 1 (bare-metal):</span> Runs directly on hardware with better performance - used in production (VMware ESXi, Hyper-V, KVM)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Type 2 (hosted):</span> Runs on top of an OS with easier setup - used for development (VirtualBox, VMware Workstation)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Cloud platforms use <span class="highlight">Type 1 hypervisors:</span> Azure uses Hyper-V, AWS uses modified KVM</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Virtual Components -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Virtual Components</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">vCPUs:</span> Virtual processors that are time-sliced on physical CPU cores - more vCPUs enable more concurrent operations</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Memory:</span> Allocated portion of physical RAM that is isolated per VM - running out causes disk swap and severe performance degradation</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Storage:</span> Disk drives that are actually files on the host (VMDK, VHD/VHDX, qcow2) - performance depends on underlying storage type</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual NICs:</span> Network interfaces that connect VMs to virtual networks with enforced isolation and security rules</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Physical vs Virtual Servers -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Physical vs Virtual Servers</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Resource Allocation:</span> Physical servers dedicate all resources to one workload - Virtual servers share and multiplex physical resources</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Provisioning Speed:</span> Physical servers take days or weeks to deploy - Virtual servers provision in minutes from resource pools</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Scaling:</span> Physical requires hardware procurement - Virtual enables elastic scaling through configuration changes</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Cost Model:</span> Physical uses capital expenditure (CapEx) - Virtual uses operational expenditure (OpEx) billed by usage</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: Azure Virtual Machines -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Virtual Servers in Azure</h2>
+
+                <div class="fragment info-box">
+                    <p>Azure manages the <span class="highlight">physical infrastructure</span> - hypervisors, servers, networking, and storage systems</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>You specify: <span class="highlight">Region, Size, OS Image, Storage disks, and Virtual Network</span> configuration</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">VM Series:</span> B-series (burstable), D-series (general-purpose), E-series (memory-optimized), F-series (compute-optimized)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Managed Disks:</span> Standard HDD (backups), Standard SSD (general workloads), Premium SSD (production databases)</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Virtualization Trade-offs -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Trade-offs of Virtualization</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Performance Overhead:</span> Hypervisor consumes resources and adds 2-10% latency - I/O workloads see more overhead than compute workloads</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Noisy Neighbors:</span> VMs on the same host compete for resources - one VM's excessive usage can degrade others' performance</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Abstraction Limits:</span> Some workloads need direct hardware access - specialized network cards, GPUs, or specific CPU features</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>For most workloads these trade-offs are acceptable - when not, use <span class="highlight">dedicated hosts</span> or bare-metal instances</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: Closing Slide -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <p class="big-text">Virtual servers emulate physical computers through software, enabling efficient resource utilization and rapid provisioning</p>
+                    <p class="subtitle" style="margin-top: 2em;">Understanding the architecture informs decisions about VM sizing, storage configuration, and when trade-offs matter</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: 'c/t',
+            history: true,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.0
+        });
+    </script>
+</body>
+</html>

@@ -5,9 +5,9 @@ date = 2024-11-17
 draft = false
 +++
 
-[Watch the presentation]({{< relref "inside-a-physical-server-slides.md" >}})
+[Watch the presentation](/presentations/infrastructure-fundamentals/compute/3-inside-a-physical-server.html)
 
-[Se presentationen på svenska]({{< relref "inside-a-physical-server-slides-swe.md" >}})
+[Se presentationen på svenska](/presentations/infrastructure-fundamentals/compute/3-inside-a-physical-server-swe.html)
 
 ---
 

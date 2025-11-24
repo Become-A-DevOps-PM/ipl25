@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Inuti en Virtual Server</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    INUTI EN<br>
+                    VIRTUAL<br>
+                    SERVER
+                </h1>
+
+                <p class="subtitle">Infrastructure Fundamentals</p>
+                <p class="course-info">Förstå virtualiseringsarkitektur</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: What is Virtualization? -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Vad är virtualisering?</h2>
+
+                <div class="fragment info-box">
+                    <p>En <span class="highlight">virtual server</span> (VM) är en mjukvarubaserad emulering av en fysisk dator som kör sitt eget operativsystem och applikationer</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Från mjukvarans perspektiv framstår VM:en som en <span class="highlight">dedikerad fysisk maskin</span> med fullständig isolering från andra VMs</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Flera VMs kan dela samma fysiska hårdvara, vilket förbättrar <span class="highlight">resursanvändningen</span> och minskar kostnaderna</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: The Hypervisor -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Hypervisor-lagret</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Hypervisor</span> hanterar fysiska hårdvaruresurser och allokerar dem till virtuella maskiner</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Type 1 (bare-metal):</span> Körs direkt på hårdvaran med bättre prestanda - används i produktion (VMware ESXi, Hyper-V, KVM)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Type 2 (hosted):</span> Körs ovanpå ett OS med enklare uppsättning - används för utveckling (VirtualBox, VMware Workstation)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Cloud-plattformar använder <span class="highlight">Type 1 hypervisors:</span> Azure använder Hyper-V, AWS använder modifierad KVM</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Virtual Components -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Virtuella komponenter</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">vCPUs:</span> Virtuella processorer som tidsdelas på fysiska CPU-kärnor - fler vCPUs möjliggör fler samtidiga operationer</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Memory:</span> Allokerad del av fysiskt RAM som är isolerad per VM - att få slut orsakar disk-swapping och allvarlig prestandaförsämring</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual Storage:</span> Diskar som egentligen är filer på hosten (VMDK, VHD/VHDX, qcow2) - prestanda beror på underliggande lagringstyp</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Virtual NICs:</span> Nätverksgränssnitt som kopplar VMs till virtuella nätverk med tvingad isolering och säkerhetsregler</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Physical vs Virtual Servers -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Fysiska vs virtuella servrar</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Resursallokering:</span> Fysiska servrar dedikerar alla resurser till en arbetsbelastning - Virtuella servrar delar och multiplexar fysiska resurser</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Provisioneringshastighet:</span> Fysiska servrar tar dagar eller veckor att driftsätta - Virtuella servrar provisioneras på minuter från resurspooler</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Skalning:</span> Fysisk kräver hårdvaruanskaffning - Virtuell möjliggör elastisk skalning genom konfigurationsändringar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Kostnadsmodell:</span> Fysisk använder kapitalutgifter (CapEx) - Virtuell använder driftskostnader (OpEx) fakturerade efter användning</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: Azure Virtual Machines -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Virtual Servers i Azure</h2>
+
+                <div class="fragment info-box">
+                    <p>Azure hanterar den <span class="highlight">fysiska infrastrukturen</span> - hypervisors, servrar, nätverk och lagringssystem</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Du specificerar: <span class="highlight">Region, Size, OS Image, Storage-diskar och Virtual Network</span>-konfiguration</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">VM-serier:</span> B-series (burstable), D-series (general-purpose), E-series (memory-optimized), F-series (compute-optimized)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Managed Disks:</span> Standard HDD (säkerhetskopior), Standard SSD (allmänna arbetsbelastningar), Premium SSD (produktionsdatabaser)</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Virtualization Trade-offs -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Avvägningar med virtualisering</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Performance overhead:</span> Hypervisor förbrukar resurser och adderar 2-10% latens - I/O-arbetsbelastningar ser mer overhead än compute-arbetsbelastningar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Noisy Neighbors:</span> VMs på samma host tävlar om resurser - en VMs överdriven användning kan försämra andras prestanda</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Abstraktionsgränser:</span> Vissa arbetsbelastningar behöver direkt hårdvaruåtkomst - specialiserade nätverkskort, GPUs eller specifika CPU-funktioner</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>För de flesta arbetsbelastningar är dessa avvägningar acceptabla - när inte, använd <span class="highlight">dedicated hosts</span> eller bare-metal-instanser</p>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: Closing Slide -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <p class="big-text">Virtual servers emulerar fysiska datorer genom mjukvara, vilket möjliggör effektiv resursanvändning och snabb provisionering</p>
+                    <p class="subtitle" style="margin-top: 2em;">Att förstå arkitekturen informerar beslut om VM-storlek, lagringskonfiguration och när avvägningar spelar roll</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: 'c/t',
+            history: true,
+            width: 1920,
+            height: 1080,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 1.0
+        });
+    </script>
+</body>
+</html>

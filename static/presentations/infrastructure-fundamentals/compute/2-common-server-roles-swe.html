@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Vanliga Server-roller</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TPJY0FZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-50TPJY0FZH');
+    </script>
+
+    <!-- Reveal.js Core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+
+    <!-- Swedish Tech Slides CSS -->
+    <link rel="stylesheet" href="../../swedish-tech-slides.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Hero Slide -->
+            <section class="hero-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <h1 class="main-title">
+                    VANLIGA<br>
+                    SERVER-<br>
+                    ROLLER
+                </h1>
+
+                <p class="subtitle">Infrastrukturgrunder</p>
+                <p class="course-info">Förstå specialiserade serverfunktioner</p>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 2: Overview -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Vad är Server-roller?</h2>
+
+                <div class="fragment info-box">
+                    <p>Servrar kategoriseras efter <span class="highlight">de tjänster de tillhandahåller</span>. Istället för monolitiska system distribuerar organisationer servrar med <span class="highlight">definierade roller</span> optimerade för specifika uppgifter.</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Denna arkitektur möjliggör <span class="highlight">oberoende skalning</span>, <span class="highlight">felisolering</span> och <span class="highlight">optimerad prestanda</span> för varje komponent.</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 3: Common Server Roles Landscape -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Översikt över Server-roller</h2>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Database Server</span> - Lagrar och hanterar strukturerad data med integritetskrav</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">File Server</span> - Centraliserad fillagring med nätverksåtkomst och behörigheter</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Mail Server</span> - Hanterar e-postoperationer: skicka, ta emot, dirigera, lagra</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">DNS Server</span> - Översätter domännamn till IP-adresser</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">DHCP Server</span> - Tilldelar dynamiskt IP-adresser till nätverksenheter</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 4: Web Servers -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Web Servers</h2>
+
+                <div class="fragment info-box">
+                    <p>Accepterar <span class="highlight">HTTP/HTTPS requests</span> från klienter och returnerar svar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Statiskt innehåll</span> (HTML, CSS, bilder) - serveras direkt från disk</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Dynamiskt innehåll</span> - delegeras till application servers för bearbetning</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Huvudfunktioner: <span class="highlight">SSL/TLS termination</span>, svarskomprimering, caching, request routing, hantering av tusentals samtidiga anslutningar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Exempel: <span class="highlight">nginx</span> (event-driven), <span class="highlight">Apache</span> (process-baserad)</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 5: Application Servers -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Application Servers</h2>
+
+                <div class="fragment info-box">
+                    <p>Utför <span class="highlight">affärslogik</span> och genererar dynamiskt innehåll</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Tillhandahåller <span class="highlight">runtime environment</span> för applikationskod: Python (Gunicorn, uWSGI), Java (Tomcat, WildFly)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Hanterar request-bearbetning, <span class="highlight">databasanslutningar</span>, sessionshantering, resursallokering</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Sitter vanligtvis <span class="highlight">bakom web servers</span> - web server hanterar SSL, statiskt innehåll, routing; application server exekverar logik</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Skalar horisontellt</span> - distribuera flera instanser bakom load balancer</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 6: Reverse Proxies -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Reverse Proxies</h2>
+
+                <div class="fragment info-box">
+                    <p>Sitter <span class="highlight">mellan klienter och backend-servrar</span>, agerar på servrars vägnar</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Load balancing</span> - distribuerar requests över flera backends (round-robin, least connections, weighted)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">SSL termination</span> - avlastar kryptering/dekryptering från backends</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Caching</span> - lagrar svar och serverar direkt för identiska requests</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Request routing</span> - dirigerar till olika backends baserat på URL, headers, kriterier</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Exempel: <span class="highlight">nginx</span>, <span class="highlight">HAProxy</span>, Azure Application Gateway, AWS ALB</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 7: Bastion Hosts -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Bastion Hosts</h2>
+
+                <div class="fragment info-box">
+                    <p>Tillhandahåller <span class="highlight">säker administrativ åtkomst</span> till servrar i privata nätverk</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Kontrollerad ingångspunkt</span> - enda servern med både extern tillgänglighet och intern nätverksåtkomst</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Reducerad attackyta</span> - interna servrar har inga administrativa portar exponerade mot internet</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Centraliserad åtkomstkontroll</span> - en enda punkt för autentisering, MFA-tillämpning</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p><span class="highlight">Audit logging</span> - alla administrativa sessioner loggas på en enda plats</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Molntjänster: <span class="highlight">Azure Bastion</span>, AWS Systems Manager Session Manager</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 8: How Roles Interact -->
+            <section class="bullet-slide" data-background-color="#0A0E27">
+                <h2 class="slide-header">Hur dessa roller samverkar</h2>
+
+                <div class="fragment info-box">
+                    <p>Typiskt flöde för en webbapplikation:</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>1. Klienter ansluter till <span class="highlight">reverse proxy</span> (SSL termination, routing)</p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>2. Statiskt innehåll serveras direkt; dynamiska requests vidarebefordras till <span class="highlight">application servers</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>3. Application servers utför affärslogik, frågar <span class="highlight">database servers</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>4. Administratörer får åtkomst till alla servrar genom <span class="highlight">bastion host</span></p>
+                </div>
+
+                <div class="fragment info-box">
+                    <p>Arkitekturen skalar från <span class="highlight">en enda VM</span> (alla roller kombinerade) till <span class="highlight">distribuerade system</span> (oberoende skalning per roll)</p>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+            <!-- SLIDE 9: Closing Slide -->
+            <section class="closing-slide" data-background-color="#0A0E27">
+                <div class="geometric-bg"></div>
+                <div class="corner-accent"></div>
+
+                <div class="centered-content">
+                    <div class="big-symbol">🎯</div>
+                    <div class="big-text">
+                        MATCHA INFRASTRUKTUR<br>
+                        TILL FUNKTION
+                    </div>
+                </div>
+
+                <div class="bottom-accent"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            width: 1920,
+            height: 1080,
+            margin: 0,
+            minScale: 1,
+            maxScale: 1,
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+            transition: 'fade',
+            transitionSpeed: 'default'
+        });
+    </script>
+</body>
+</html>

@@ -5,9 +5,9 @@ date = 2024-11-17
 draft = false
 +++
 
-[Watch the presentation]({{< relref "what-is-a-server-slides.md" >}})
+[Watch the presentation](/presentations/infrastructure-fundamentals/compute/1-what-is-a-server.html)
 
-[Se presentationen på svenska]({{< relref "what-is-a-server-slides-swe.md" >}})
+[Se presentationen på svenska](/presentations/infrastructure-fundamentals/compute/1-what-is-a-server-swe.html)
 
 ---
 
